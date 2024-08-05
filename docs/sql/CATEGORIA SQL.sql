@@ -1,0 +1,62 @@
+--Listar todos los registros por Sucursal
+alter procedure SP_L_CATEGORIA_01
+@SUC_ID INT
+AS
+BEGIN
+	SELECT * FROM TM_CATEGORIA
+	WHERE
+	SUC_ID = @SUC_ID
+	AND EST=1
+END
+
+--OBTENER REGISTRO POR ID
+create procedure SP_L_CATEGORIA_02
+@CAT_ID INT
+AS
+BEGIN
+	SELECT * FROM TM_CATEGORIA
+	WHERE
+	CAT_ID = @CAT_ID
+END
+
+--ELIMINAR REGISTRO
+create procedure SP_D_CATEGORIA_01
+@CAT_ID INT
+AS
+BEGIN
+	update	TM_CATEGORIA
+	SET 
+		EST=0
+	WHERE
+		CAT_ID = @CAT_ID
+END
+
+
+--REGISTRAR NUEVO REGISTRO 
+create procedure SP_I_CATEGORIA_01
+@SUC_ID int,
+@CAT_NOM varchar(150)
+As
+Begin
+	Insert into TM_CATEGORIA
+	(SUC_ID, CAT_NOM, FECH_CREA, EST)
+	values
+	(@SUC_ID, @CAT_NOM,GETDATE(),1)
+end
+
+--ACTUALIZAR REGISTRO
+create procedure SP_U_CATEGORIA_01
+@CAT_ID int,
+@SUC_ID int,
+@CAT_NOM varchar(150)
+As
+Begin
+	update TM_CATEGORIA
+	set
+		SUC_ID = @SUC_ID,
+		CAT_NOM = @CAT_NOM
+	where
+		CAT_ID = @CAT_ID
+end
+
+
