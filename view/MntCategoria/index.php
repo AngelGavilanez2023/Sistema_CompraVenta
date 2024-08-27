@@ -48,12 +48,10 @@
                                     <table id="table_data" class="table table-bordered dt-responsive nowrap table-striped align-middle" style="width:100%">
                                         <thead>
                                             <tr>
-                                             
                                                 <th>Nombre</th>
                                                 <th>FechaCreacion</th>
-                                          
-                                                <th>Priority</th>
-                                                <th>Action</th>
+                                                <th></th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -77,10 +75,9 @@
     <!-- END layout-wrapper -->
 
 
-
-   <?php require_once("../html/js.php"); ?>
-
-   <script type="text/javascript" src="mntcategoria.js"></script>
+    <?php require_once("mantenimiento.php"); ?>
+    <?php require_once("../html/js.php"); ?>
+    <script type="text/javascript" src="mntcategoria.js"></script>
 
 </body>
 
